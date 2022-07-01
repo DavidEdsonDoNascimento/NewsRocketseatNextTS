@@ -1,0 +1,61 @@
+.headerContainer {
+  height: 5rem;
+  border-bottom: 1px solid var(--gray-800);
+}
+
+.headerContent {
+  max-width: 1120px;
+  height: 5rem; /* ocupa toda altura já definida no elemento pai */
+  margin: 0 auto; /* alinha ao centro horizontalmente */
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+
+  /* espaçamento entre a logo e o menu */
+  nav {
+    margin-left: 5rem;
+    height: 5rem; /* se o nav ocupar a altura definida no pai fica facil aplicar efeito hover com a borda de header */
+
+    a {
+      display: inline-block;
+      position: relative;
+      padding: 0 0.5rem;
+      height: 5rem;
+      line-height: 5rem; /* centraliza o texto colocando o mesmo tamanho q ele ocupa */
+      color: var(--gray-300);
+      transition: color 0.2s;
+      
+      /* 
+      * Hackizinho pra pegar do segundo link em diante e espaçar a esquerda
+      * para visualizar remova essa linha e preste atenção no menu (Home x Posts)
+       */
+      & + a {
+        margin-left: 2rem;
+      }
+
+      &:hover {
+        color: var(--white);
+      }
+
+      &.active {
+        color: var(--white);
+        font-weight: bold;
+      }
+      /* 
+      * elemento after incluir algo após o conteudo da tag, caso não tenha nada é importante ser vazio 
+      * foi usado aqui para criar a bordinha amarela do link no menu
+      */
+      &.active::after {
+        content: '';
+        height: 3px;
+        border-radius: 3px 3px 0 0;
+        width: 100%;
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        background: var(--yellow-500);
+      }
+    }
+  }
+}
