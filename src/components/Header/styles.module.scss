@@ -58,4 +58,10 @@
       }
     }
   }
+
+  /* no contexto do Header eu quero que se coloque o maximo de margin possivel para esquerda */
+  /* o contexto q define o posicionamento do botão */
+  button {
+    margin-left: auto;
+  }
 }
