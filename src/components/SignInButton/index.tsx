@@ -13,7 +13,7 @@ export const SignInButton = () => {
       type="button">
       <FaGithub color="#04d361" />
       David Edson
-      <FiX color="737380" className={styles.closeIcon} />
+      <FiX color="#737380" className={styles.closeIcon} />
     </button>
   )
     : (
